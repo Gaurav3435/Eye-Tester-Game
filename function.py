@@ -199,9 +199,26 @@ def developer_window(root):
     Label(top,text= "🤔", font=('Arial 25 bold')).pack(side=TOP)
     Label(top,text= "gauravpatil2232001@gmail.com", font=('Arial 15 bold')).pack(side=TOP)
 
+def tip_window(root):
+    top= Toplevel(root)
+    top.geometry("750x300")
+    top.title("want a tip?")
+    Label(top,text= "If you revisit the game and want the same score, as the last time you played the game?", font=('Arial 10 bold')).pack(side=TOP)
+    Label(top,text= "🧐", font=('Arial 25 bold')).pack(side=TOP)
+    Label(top,text= "Close the game using X cross instead of Quit", font=('Arial 10 bold')).pack(side=TOP)
+    Label(top,text= "🤫", font=('Arial 25 bold')).pack(side=TOP)
+
+def next_window(root):
+    top= Toplevel(root)
+    top.geometry("750x300")
+    top.title("What are you expecting in next version?")
+    Label(top,text= "You can mail me your expectation!", font=('Arial 10 bold')).pack(side=TOP)
+    Label(top,text= "😍", font=('Arial 25 bold')).pack(side=TOP)
+    Label(top,text= "From my side i will add a timer to make it more challenging!", font=('Arial 10 bold')).pack(side=TOP)
+    Label(top,text= "🤭", font=('Arial 25 bold')).pack(side=TOP)
+
 def menu_bar(root):
     menubar = Menu(root)
-
     filemenu = Menu(menubar, tearoff=0)
     filemenu.add_command(label="New Game", command=lambda:restart_game(root))
     filemenu.add_command(label="Change Color", command=restart_program)
@@ -213,9 +230,14 @@ def menu_bar(root):
     helpmenu = Menu(menubar, tearoff=0)
     helpmenu.add_command(label="Help", command=lambda: help_window(root))
     helpmenu.add_command(label="About...", command=lambda: about_window(root))
-    helpmenu.add_command(label="Developer", command=lambda: developer_window(root))
     filemenu.add_separator()
+    helpmenu.add_command(label="Developer", command=lambda: developer_window(root))
     menubar.add_cascade(label="Help", menu=helpmenu)
+
+    tipmenu = Menu(menubar, tearoff=0)
+    tipmenu.add_command(label="Secret", command=lambda: tip_window(root))
+    tipmenu.add_command(label="What's Next?", command=lambda: next_window(root))
+    menubar.add_cascade(label="Secret", menu=tipmenu)
 
     root.config(menu=menubar)
     return root
