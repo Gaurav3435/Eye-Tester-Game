@@ -43,9 +43,7 @@ This is open Source Project, you are welcome to contribute.
 
 # How to setup?
 1. Clone the Github Repository.
-2. Install the requirements.
-3. Run the main.py file to get started.
-
+2. Run the main.exe file to get started.
 
 <br>
 >***Note: There is a lot of future scope to further develop the project.***
